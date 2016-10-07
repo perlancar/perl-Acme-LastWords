@@ -6,7 +6,7 @@ package Acme::LastWords;
 use strict;
 use warnings;
 
-my @words = (
+our @words = (
     "Dictionary.", # Joseph Wright
     "Happy.", # Raphael
     "Mozart!", # Gustav Mahler
