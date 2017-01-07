@@ -19,11 +19,11 @@ my @words = (
 
 sub new {
     my $class = shift;
-    bless [], $class;
+    bless [$_[0]], $class;
 }
 
 sub DESTROY {
-    print $words[rand @words], "\n";
+    print +(defined $_[0][0] ? $_[0][0] : $words[rand @words]), "\n";
 }
 
 1;
@@ -38,6 +38,10 @@ sub DESTROY {
  my $obj = Acme::LastWords->new;
 
  undef $obj; # will print e.g. "Dictionary."
+
+Use your own last words:
+
+ my $obj = Acme::LastWords->new("It's now or never");
 
 
 =head1 DESCRIPTION
